@@ -13,18 +13,15 @@ and have not exposed the web console port on the docker host.
 
 ## Extending the image
 
-
-
 First, create a `users.properties` file that contains your users, passwords, and roles.  For example:
 
-    admin=password,Operator, Maintainer, Deployer, Auditor, Administrator, SuperUser
-    dev=password,Operator, Maintainer, Deployer
+    admin=admin,admin,manager,viewer,Operator, Maintainer, Deployer, Auditor, Administrator, SuperUser
 
 
 Then create a Dockerfile with the following content:
 
     FROM jboss/jboss-fuse-full
-    COPY users.properties /opt/jboss/jboss-fuse/etc/
+    COPY users.properties /opt/${FUSE_HOME}/etc/
     
 
 Then you can build a new Docker image using the following commnad:
@@ -62,16 +59,16 @@ If you add the ``-p 8101:8101` to your `docker run` command, then you should be 
 
 ## Image internals
 
-This image extends the [`jboss/base-jdk:7`](https://github.com/JBoss-Dockerfiles/base-jdk/tree/jdk7) image which adds the OpenJDK distribution on top of the [`jboss/base`](https://github.com/JBoss-Dockerfiles/base) image. Please refer to the README.md for selected images for more info.
+This image extends the [`jboss/base-jdk:8`](https://github.com/JBoss-Dockerfiles/base-jdk/tree/jdk8) image which adds the OpenJDK distribution on top of the [`jboss/base`](https://github.com/JBoss-Dockerfiles/base) image. Please refer to the README.md for selected images for more info.
 
 The server is run as the `jboss` user which has the uid/gid set to `1000`.
 
-Fuse is installed in the `/opt/jboss/jboss-fuse` directory.
+Fuse is installed in the `/opt/jboss-fuse-${FUSE_VERSION}` directory.
 
 ## Source
 
-The source is [available on GitHub](https://github.com/jboss-fuse/jboss-fuse-docker).
+The source is [available on GitHub](https://github.com/stekodyne/jboss-fuse-docker).
 
 ## Issues
 
-Please report any issues or file RFEs on [GitHub](https://github.com/jboss-fuse/jboss-fuse-docker/issues).
+Please report any issues or file RFEs on [GitHub](https://github.com/stekodyne/jboss-fuse-docker).

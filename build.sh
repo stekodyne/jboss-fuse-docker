@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 DOCKER_IMAGE_NAME=jboss/jboss-fuse-full
 DOCKER_IMAGE_VERSION=latest
 
