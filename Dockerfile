@@ -26,18 +26,18 @@ COPY install.sh /opt/install.sh
 RUN /opt/install.sh
 
 # Copy users.properties to image.
-COPY users.properties /opt/${FUSE_HOME}/etc/users.properties
+COPY users.properties ${FUSE_HOME}/etc/users.properties
 
 EXPOSE 8181 8101 1099 44444 61616 1883 5672 61613 61617 8883 5671 61614
 
 #
 # The following directories can hold config/data, so lets suggest the user
 # mount them as volumes.
-VOLUME /opt/${FUSE_HOME}/bin
-VOLUME /opt/${FUSE_HOME}/etc
-VOLUME /opt/${FUSE_HOME}/data
-VOLUME /opt/${FUSE_HOME}/deploy
+VOLUME ${FUSE_HOME}/bin
+VOLUME ${FUSE_HOME}/etc
+VOLUME ${FUSE_HOME}/data
+VOLUME ${FUSE_HOME}/deploy
 
 # lets default to the jboss-fuse dir so folks can more easily navigate to around the server install
-WORKDIR /opt/${FUSE_HOME}
-CMD /opt/${FUSE_HOME}/bin/fuse server
+WORKDIR ${FUSE_HOME}
+CMD ${FUSE_HOME}/bin/fuse server
