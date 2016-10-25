@@ -2,6 +2,12 @@
 
 This project builds a Docker image for [JBoss Fuse](http://www.jboss.org/products/fuse/overview/).
 
+## Building image
+
+    ./build.sh
+
+This will build a Docker image locally named jboss/jboss-fuse-full.
+
 ## Usage
 
 You can then run a Fuse server with the following command:
