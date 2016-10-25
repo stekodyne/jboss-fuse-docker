@@ -40,7 +40,7 @@ Run your new image:
 
 The administration console should be available at [http://localhost:8181/hawtio](http://localhost:8181/hawtio)
 
-## Ports Opened by Fuse
+## Ports opened by Fuse
 
 You may need to map ports opened by the Fuse container to host ports if you need to access it's services.
 Those ports are:
