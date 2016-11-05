@@ -1,0 +1,26 @@
+target/
+!.mvn/wrapper/maven-wrapper.jar
+
+jboss-fuse-karaf-6.3.0.redhat-187.zip
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
